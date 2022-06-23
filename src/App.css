@@ -4,5 +4,7 @@ body {
   padding: 0;
 }
 
-code {
+.app {
+  background-color: #000;
+  height: 100%;
 }
