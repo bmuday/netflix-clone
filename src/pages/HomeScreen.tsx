@@ -1,3 +1,4 @@
+import Banner from "../components/Banner";
 import Nav from "../components/Nav";
 import "./css/HomeScreen.css";
 
@@ -8,6 +9,7 @@ const HomeScreen = () => {
       <Nav />
 
       {/* Banner */}
+      <Banner />
 
       {/* Row */}
     </div>

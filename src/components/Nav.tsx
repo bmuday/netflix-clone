@@ -1,13 +1,35 @@
+import { useEffect, useState } from "react";
 import "./css/Nav.css";
 
 const Nav = () => {
+  const [show, handleShow] = useState(false);
+
+  const transitionNavBar = () => {
+    if (window.scrollY > 100) {
+      handleShow(true);
+    } else {
+      handleShow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", transitionNavBar);
+    return () => window.removeEventListener("scroll", transitionNavBar);
+  }, []);
   return (
-    <div className="nav">
-      <img
-        src="https://i0.wp.com/watchama.fr/wp-content/uploads/2020/04/Netflix-Logo-Print_PMS.jpg?ssl=1"
-        alt="Netflix logo"
-      />
-      <h1>This is the nav</h1>
+    <div className={`nav ${show && "nav__black"}`}>
+      <div className="nav__contents">
+        <img
+          className="nav__logo"
+          src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+          alt="logo"
+        />
+        <img
+          className="nav__avatar"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt="avatar"
+        />
+      </div>
     </div>
   );
 };
