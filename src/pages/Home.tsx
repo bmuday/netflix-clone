@@ -1,12 +1,12 @@
-import "./css/HomeScreen.css";
+import "./Home.css";
 import Banner from "../components/Banner";
 import Nav from "../components/Nav";
 import Row from "../components/Row";
 import requests from "../components/Requests";
 
-const HomeScreen = () => {
+const Home = () => {
   return (
-    <div className="homeScreen">
+    <div className="home">
       {/* Nav */}
       <Nav />
 
@@ -50,4 +50,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default Home;
